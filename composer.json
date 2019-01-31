@@ -1,0 +1,11 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"DHT11\\" : "src"
+		}
+	},
+	"name" : "DHT11/DHT11_Composer",
+	"require" : {
+		"php" : ">=7.3"
+	}
+}
