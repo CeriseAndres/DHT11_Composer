@@ -1,6 +1,4 @@
 <?php
-require '../vendor/autoload.php';
-
 
 use DHT11\Model\MeasureManager;
 
@@ -21,7 +19,7 @@ if (!empty($_POST['date']) && !empty($_POST['temperature']) && !empty($_POST['hu
     $newMeasure->humidite=$_POST['humidite'];
     $create->createMeasure($newMeasure->date,$newMeasure->temperature,$newMeasure->humidite);
     
-    header ('Location: display_thermometer.php');
+    header ('Location: routeur.php');
 }
 
 require '../view/template/thermometerView.php';

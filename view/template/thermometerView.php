@@ -1,5 +1,5 @@
 <?php
-$title = 'Thermomètre';
+$title = 'Dernière mesure';
 ?>
 <?php 
 ob_start(); 
@@ -15,19 +15,32 @@ if ($lastMeasure) {
 <?php
 }
 ?>
-<ul>        
 
+<h1>Object Connecté DHT11</h1>
 <?php
-foreach ($measures as $measure) {
-?>
+use DHT11\Model\MeasureManager;
 
-    <li>
-        <?php echo $measure->id; ?> - <?php echo $measure->date; ?> - <?php echo $measure->temperature; ?> <?php echo $measure->humidite; ?>
-    </li>
-</ul>	
-<?php
-}
+echo "le ".$lastMeasure->date;
 ?>
+<br>
+<?php
+echo "Température : ".$lastMeasure->temperature;
+echo " Humidité : ".$lastMeasure->humidite;
+
+
+$tempInt=(int)$temp;
+$height=($tempInt/50*195)+160;
+$top=(($tempInt+30)*4)*-1+435;
+
+?>
+<br>
+<img src="../static/img/thermometer.jpg" id="termo"/>
+<div class="rouge" style=
+<?php
+echo "\"height:".$height."px; top:".$top."px;\"";
+?>>
+</div>
+
 
 <?php $content = ob_get_clean(); ?>
 

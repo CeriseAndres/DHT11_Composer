@@ -7,5 +7,6 @@ class Config
     public  $dbname = 'DHT11';
     public  $username = 'root';
     public  $password = 'Dta2018!';
+    
 }
 
